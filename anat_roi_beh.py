@@ -5,11 +5,6 @@ import seaborn as sns
 
 from statsmodels.formula.api import mixedlm
 
-
-# =====================================================
-# USER OPTIONS
-# =====================================================
-
 BEHAVIOUR_FILE = "ddm_fit_results_simple.csv"
 
 # choose anatomy file:
@@ -26,21 +21,13 @@ STRUCTURAL_MEASURE = "GrayVol"
 
 BEHAVIOUR_MEASURE = "drift_v"
 
-
-# =====================================================
 # LOAD DATA
-# =====================================================
 
 behaviour = pd.read_csv(BEHAVIOUR_FILE)
 
 structure = pd.read_csv(
     STRUCTURAL_FILE
 )
-
-
-# =====================================================
-# STANDARDISE SUBJECT IDS
-# =====================================================
 
 # Extract subject and session from behavioural IDs
 behaviour["Subject"] = (
@@ -57,10 +44,7 @@ behaviour["Session"] = (
     .str.zfill(2)
 )
 
-
-# =====================================================
 # STRUCTURE LONG FORMAT
-# =====================================================
 
 structure = structure[
     structure["Session"].isin(
@@ -76,10 +60,7 @@ structure["session_num"] = (
     .astype(int)
 )
 
-
-# =====================================================
-# MERGE
-# =====================================================
+#merge
 print("\nBehaviour IDs:")
 print(behaviour[["Subject","Session"]].drop_duplicates().head(10))
 
@@ -102,22 +83,12 @@ print(
     merged.Subject.nunique()
 )
 
-
-# =====================================================
-# ROIS
-# =====================================================
-
 rois = merged["Cluster"].unique()
 
 print("\nROIs:")
 print(rois)
 
-
-
-# =====================================================
-# LINEAR MIXED MODELS
-# =====================================================
-
+#LMMs
 results = []
 
 
@@ -196,13 +167,7 @@ print(
 )
 
 
-
-# =====================================================
-# PLOT 1:
-# CORRELATION BETWEEN ANATOMY AND BEHAVIOUR BY SESSION
-# =====================================================
-
-
+# plot1
 corr_results=[]
 
 
@@ -269,13 +234,7 @@ plt.tight_layout()
 
 plt.show()
 
-
-
-# =====================================================
-# PLOT 2:
-# INDIVIDUAL ANATOMICAL TRAJECTORIES
-# =====================================================
-
+# plot2
 top_roi = (
     results_df
     .sort_values("p_anatomy")
@@ -316,14 +275,7 @@ plt.tight_layout()
 
 plt.show()
 
-
-
-# =====================================================
-# PLOT 3:
-# BEHAVIOUR TRAJECTORY
-# =====================================================
-
-
+#plot3
 plt.figure(figsize=(8,5))
 
 
