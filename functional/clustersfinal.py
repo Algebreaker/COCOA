@@ -7,10 +7,7 @@ from nilearn.image import load_img
 from scipy import ndimage
 from nibabel.affines import apply_affine
 
-
-# ==========================================================
 # INPUT FILES
-# ==========================================================
 
 # Already cluster-corrected map
 cluster_map_path = (
@@ -27,9 +24,7 @@ z_map_path = (
 )
 
 
-# ==========================================================
 # LOAD IMAGES
-# ==========================================================
 
 cluster_img = load_img(cluster_map_path)
 cluster_data = cluster_img.get_fdata()
@@ -41,9 +36,7 @@ z_data = z_img.get_fdata()
 affine = cluster_img.affine
 
 
-# ==========================================================
 # FUNCTION TO EXTRACT CLUSTERS
-# ==========================================================
 
 def extract_clusters(cluster_data, z_data, sign_name):
 
@@ -150,10 +143,7 @@ def extract_clusters(cluster_data, z_data, sign_name):
     return results
 
 
-
-# ==========================================================
 # SPLIT POSITIVE AND NEGATIVE CLUSTERS
-# ==========================================================
 
 positive_clusters = cluster_data > 0
 negative_clusters = cluster_data < 0
