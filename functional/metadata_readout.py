@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-@author: finnemann
-"""
-
 import pandas as pd
 
 # Replace with your file/path
