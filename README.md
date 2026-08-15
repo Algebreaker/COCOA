@@ -42,13 +42,15 @@ BIDS + fMRIPrep
                        └─► Cluster results
 ```
 ##### Helper scripts:
-clustersfinal.py - prints out the significant clusters based on output files with MNI coordinates etc.
+clustersfinal.py - prints out the significant clusters based on output files with MNI coordinates etc
 
-metadata_readout.py - reads out mean intervals between sessions, valid runs etc. from the metadata.tsv file that is created in part1.
+metadata_readout.py - reads out mean intervals between sessions, valid runs etc. from the metadata.tsv file that is created in part1
 
 func_plot.py generates the plots of significant clusters
 
-func_behaviour.py runs the LME and regression analyses to look at the relationship of activation and behaviour.
+PSC_plot.py plots the percent signal change per cluster
+
+func_behaviour.py runs the LME and regression analyses to look at the relationship of activation and behaviour
 
 ## Structural Analysis
 All scripts are found in the 'structural' folder. 
@@ -71,4 +73,4 @@ The scripts should be run in this order:
 ##### Helper scripts:
 struct_plot.py plots the significant clusters across all metrics
 
-struct_behaviour.py runs the LME and regression analyses to look at the relationship of morphology and behaviour.
+struct_behaviour.py runs the LME and regression analyses to look at the relationship of morphology and behaviour
