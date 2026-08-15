@@ -46,6 +46,8 @@ clustersfinal.py - prints out the significant clusters based on output files wit
 
 metadata_readout.py - reads out mean intervals between sessions, valid runs etc. from the metadata.tsv file that is created in part1.
 
+func_plot.py generates the plots of significant clusters
+
 func_behaviour.py runs the LME and regression analyses to look at the relationship of activation and behaviour.
 
 ## Structural Analysis
