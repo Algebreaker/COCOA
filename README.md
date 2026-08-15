@@ -73,4 +73,7 @@ The scripts should be run in this order:
 ##### Helper scripts:
 struct_plot.py plots the significant clusters across all metrics
 
+## Behaviour
+The ddm.py file in the stats folder runs the drift diffusion model, the ddm_plt.py plots the results.
+
 struct_behaviour.py runs the LME and regression analyses to look at the relationship of morphology and behaviour
